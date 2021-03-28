@@ -30,7 +30,7 @@ public class Exercise1Main {
 
         List<String> jsons = generateCourses();
 
-        CourseHelperService helperService = new CourseHelperService(jsons, studentService);
+        CourseService helperService = new CourseService(jsons, studentService);
         System.out.println();
         System.out.println(helperService.mapStudentsToRandomCourses());
 

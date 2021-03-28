@@ -3,12 +3,12 @@ package exercise1;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class CourseHelperService {
+public class CourseService {
 
     private final List<String> courseJsons;
     private final StudentService service;
 
-    public CourseHelperService(List<String> courseJsons, StudentService service) {
+    public CourseService(List<String> courseJsons, StudentService service) {
         this.courseJsons = Optional.of(courseJsons)
                 .map(ArrayList::new)
                 .orElseGet(ArrayList::new);

@@ -2,7 +2,6 @@ package exercise1;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.time.LocalDate.ofEpochDay;
@@ -13,38 +12,6 @@ public record Student(String name, LocalDate birthDate, int grade) {
 
     public Student(String name, int age, int grade) {
         this(name, RandomBirthDateGenerator.getRandomBirthDateFromAge(age),  grade);
-    }
-
-    @Override
-    public LocalDate birthDate() {
-        return birthDate;
-    }
-
-    @Override
-    public int grade() {
-        return grade;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return grade == student.grade && Objects.equals(name, student.name) && Objects.equals(birthDate, student.birthDate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, birthDate, grade);
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", birthDate=" + birthDate +
-                ", grade=" + grade +
-                '}';
     }
 
     private static class RandomBirthDateGenerator {
